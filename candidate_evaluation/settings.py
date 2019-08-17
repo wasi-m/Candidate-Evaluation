@@ -134,12 +134,12 @@ STATICFILES_DIRS = [
 
 # default static files settings for PythonAnywhere.
 # see https://help.pythonanywhere.com/pages/DjangoStaticFiles for more info
-# MEDIA_ROOT = u'/home/wasimtamboli/candidate_evaluation/media'
-# MEDIA_URL = '/media/'
-
+MEDIA_ROOT = u'/home/wasimtamboli/candidate_evaluation/media'
 MEDIA_URL = '/media/'
-MEDIAFILES_DIRS = [os.path.join(BASE_DIR, 'media')]
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# MEDIA_URL = '/media/'
+# MEDIAFILES_DIRS = [os.path.join(BASE_DIR, 'media')]
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 
