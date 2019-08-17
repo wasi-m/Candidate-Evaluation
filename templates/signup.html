@@ -4,10 +4,40 @@
 {% block title %}Sign Up{% endblock %}
 
 {% block content %}
-<h2>Sign up</h2>
-<form method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Sign up</button>
-</form>
+
+
+  <div class="page-header header-filter clear-filter purple-filter" data-parallax="true">
+  	<div class="container">
+      <div class="row">
+        <div class="col-md-8 ml-auto mr-auto">
+          <div class="brand text-center">
+            <h1>Candidate Evaluation</h1>
+            <h3 class="title text-center">Evaluate Candidate at ease</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="main main-raised">
+    <div class="container">
+      <div class="section text-center">
+		<div class="content">
+		    <div class="row">
+				<div class="card">
+		            <div class="card-body">
+		            	<h2>Sign up</h2>
+						<form method="post">
+						  {% csrf_token %}
+						  {{ form.as_p }}
+						  <button type="submit">Sign up</button>
+						</form>
+		            </div><!-- end card body-->
+		        </div><!--  end card  -->
+		    </div>
+		</div>
+      </div>
+    </div>
+  </div>
+
+
 {% endblock %}

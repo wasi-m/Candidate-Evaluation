@@ -4,15 +4,61 @@
 {% block title %}Dashboard{% endblock %}
 
 {% block content %}
+  <div class="page-header header-filter clear-filter purple-filter" data-parallax="true">
+  	<div class="container">
+      <div class="row">
+        <div class="col-md-8 ml-auto mr-auto">
+          <div class="brand text-center">
+            <h1>Candidate Evaluation</h1>
+            <h3 class="title text-center">Evaluate Candidate at ease</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-{{ candidate }}
-{{ candidate.name }}
-{{ candidate.email }}
-
-<embed src="{{ candidate.file_path }}" content_type="application/pdf" height="700px" width="500">
-
-<li><a href="{% url 'users:evaluate' candidate.email %}"> Evaluate {{ candidate.email }}</a> |
-<a href="{% url 'users:results' candidate.email %}"> See Results {{ candidate.email }}</a> |
-<a href="{% url 'users:dashboard' %}"> GoTo Dashboard</a> </li>
+  <div class="main main-raised">
+    <div class="container">
+      <div class="section text-center">
+		<div class="content">
+		    <div class="row">
+				<div class="card">
+		            <div class="card-header">
+		                <h4 class="card-title">Details submitted by {{ candidate.name }} </h4>
+		            </div>
+		            <div class="row">
+		            	<div class="col">
+		            		<br />
+		            		<br />
+		            		<br />
+		            		<div class="container">
+		            			<h4>Name : {{ candidate.name }}</h4>
+		            			<h4>Email Address : {{ candidate.email }}</h4>
+		            			<h4>Web Address : {{ candidate.web_address }}</h4>
+		            			<h4>Cover Letter : {{ candidate.cover_letter }}</h4>
+		            			<h4>Like Working : 
+		            				{% if candidate.like_working  == 1 %}
+		            					Yes
+		            				{% else %}
+		            					No
+		            				{% endif %}
+		            			</h4>
+		            		</div>
+		            	</div>
+		            	<div class="col">
+		            		<embed src="{{ candidate.file_path }}" content_type="application/pdf" height="700px" width="500">
+		            	</div>
+		            </div>
+		            <li>
+		            	<a href="{% url 'users:evaluate' candidate.email %}"> Evaluate {{ candidate.email }}</a> |
+						<a href="{% url 'users:results' candidate.email %}"> See Results {{ candidate.email }}</a> |
+						<a href="{% url 'users:dashboard' %}"> GoTo Dashboard</a>
+					</li>
+		        </div>
+		    </div>
+		</div>
+      </div>
+    </div>
+  </div>
 
 {% endblock %}

@@ -4,13 +4,61 @@
 {% block title %}Top Results{% endblock %}
 
 {% block content %}
-{% if data %}
-    <ul>
-    {% for candidate in data %}
-        <li><a href="{% url 'users:detail' candidate.contact_id.email %}">{{ candidate.contact_id.email }} {{ candidate.contact_id.name }} { candidate.review_rating }} </li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No candidates are available.</p>
-{% endif %}
+
+  <div class="page-header header-filter clear-filter purple-filter" data-parallax="true">
+  	<div class="container">
+      <div class="row">
+        <div class="col-md-8 ml-auto mr-auto">
+          <div class="brand text-center">
+            <h1>Candidate Evaluation</h1>
+            <h3 class="title text-center">Evaluate Candidate at ease</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="main main-raised">
+    <div class="container">
+      <div class="section text-center">
+		<div class="content">
+		    <div class="row">
+				<div class="card">
+		            <div class="card-header">
+		                <h4 class="card-title">All Top Results</h4>
+		            </div>
+		            <div class="card-body">
+
+		                <div class="toolbar">
+		                    <!--        Here you can write extra buttons/actions for the toolbar              -->
+		                </div>
+		                <table id="summary_table" class="table table-striped table-bordered display" style="width:100%">
+			                <thead>
+			                <tr >
+			                    <th>Name</th>
+			                    <th>Email</th>
+			                    <th>Revew Ratings</th>
+			                </tr>
+			                </thead>
+			                <tbody>
+			                {% if data %}
+			                    {% for candidate in data %}
+				                    <tr>
+				                        <td><a href="{% url 'users:detail' candidate.contact_id.email %}">{{ candidate.contact_id.name }}</a></td>
+				                        <td><a href="{% url 'users:detail' candidate.contact_id.email %}">{{ candidate.contact_id.email }}</a></td>
+				                        <td><a href="{% url 'users:results' candidate.contact_id.email %}">{{ candidate.review_rating }}</a></td>
+				                    </tr>
+				                {% endfor %}
+				            {% endif %} 
+			                </tbody>
+		                </table>
+		            </div><!-- end card body-->
+		            <li><a href="{% url 'logout' %}">Logout</a> | <a href="{% url 'users:allresults' %}">View All Results</a> | <a href="{% url 'users:topresults' %}">View Top Results</a></li>
+		        </div><!--  end card  -->
+		    </div>
+		</div>
+      </div>
+    </div>
+  </div>
+
+
 {% endblock %}
