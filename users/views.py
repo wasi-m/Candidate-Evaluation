@@ -81,11 +81,11 @@ def evaluate(request, candidate_email):
 				contact_verification.save()
 				print('success')
 				data = 'sucess'
-				return HttpResponseRedirect('/users/dashboard/', {'data':data})
+				return HttpResponseRedirect('/user/dashboard/', {'data':data})
 			else:
 				data = 'Contact already evaluated'
 				print('Contact already evaluated')
-				return HttpResponseRedirect('/users/'+candidate_email+'/', {'data':data})
+				return HttpResponseRedirect('/user/'+candidate_email+'/', {'data':data})
 
 	else:
 		form = EvaluationForm()
