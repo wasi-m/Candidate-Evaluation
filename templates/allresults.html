@@ -1,0 +1,26 @@
+<!-- allresults.html -->
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+{% if data %}
+    <ul>
+    {% for candidate in data %}
+        <li><a href="{% url 'users:detail' candidate.contact_id.email %}">{{ candidate.contact_id.email }}</a> | 
+        <a href="{% url 'users:results' candidate.contact_id.email %}">View Results of {{ candidate.contact_id.email }}</a> | 
+        {% if candidate.verified_by %}
+    		{{ candidate.verified_by }} | {{ candidate.review_rating }} | {{ candidate.verified_on }}
+    	{% else %}
+    		<a href="{% url 'users:evaluate' candidate.contact_id.email %}">Review Contact {{ candidate.contact_id.email }}</a>
+    	{% endif %}
+    	</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No candidates are available.</p>
+{% endif %}
+
+<li><a href="{% url 'logout' %}">Logout</a> | <a href="{% url 'users:topresults' %}">View Top Results</a></li>
+
+{% endblock %}

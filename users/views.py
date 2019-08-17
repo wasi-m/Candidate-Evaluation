@@ -25,9 +25,16 @@ class SignUpView(CreateView):
 
 @login_required()
 def dashboard(request):
-	data = ContactVerified.objects.all()
+	data = Contact.objects.all()
 	print(data)
 	return render(request, 'dashboard.html', {'data': data})
+
+
+@login_required()
+def allresults(request):
+	data = ContactVerified.objects.all()
+	print(data)
+	return render(request, 'allresults.html', {'data': data})
 
 
 @login_required()
