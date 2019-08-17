@@ -26,6 +26,7 @@
     <div class="container">
       <div class="navbar-translate">
         <a class="navbar-brand" href="{% url 'users:dashboard' %}">
+          <i class="material-icons">ac_unit</i>
           Candidate Evaluations Admin</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="sr-only">Toggle navigation</span>
@@ -38,17 +39,17 @@
         <ul class="navbar-nav ml-auto">
           <li class="dropdown nav-item">
             <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-              <i class="material-icons">apps</i> User
+              <i class="material-icons">account_circle</i> User
             </a>
             <div class="dropdown-menu dropdown-with-icons">
               <a href="{% url 'login' %}" class="dropdown-item">
-                <i class="material-icons">layers</i> Login
+                <i class="material-icons">person</i> Login
               </a>
               <a href="{% url 'users:signup' %}" class="dropdown-item">
-                <i class="material-icons">content_paste</i> Siginup
+                <i class="material-icons">group_add</i> Siginup
               </a>
               <a href="{% url 'logout' %}" class="dropdown-item">
-                <i class="material-icons">content_paste</i> Logout
+                <i class="material-icons">lock</i> Logout
               </a>
             </div>
           </li>
