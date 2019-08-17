@@ -45,7 +45,7 @@
                                 {% for candidate in data %}
                                     <tr>
                                         <td><a href="{% url 'users:detail' candidate.contact_id.email %}">{{ candidate.contact_id.name }}</a></td>
-                                        <td><a href="{% url 'users:evaluate' candidate.contact_id.email %}">{{ candidate.contact_id.email }}</a></td>
+                                        <td><a href="{% url 'users:detail' candidate.contact_id.email %}">{{ candidate.contact_id.email }}</a></td>
                                         <td>{{ candidate.verified_by }}</td>
                                         <td>{{ candidate.review_rating }}</td>
                                         <td class="text-center">  
