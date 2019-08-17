@@ -36,7 +36,8 @@
 			                <tr >
 			                    <th>Name</th>
 			                    <th>Email</th>
-			                    <th>Revew Ratings</th>
+			                    <th>Review Ratings</th>
+			                    <th>Reviewed By</th>
 			                </tr>
 			                </thead>
 			                <tbody>
@@ -46,6 +47,7 @@
 				                        <td><a href="{% url 'users:detail' candidate.contact_id.email %}">{{ candidate.contact_id.name }}</a></td>
 				                        <td><a href="{% url 'users:detail' candidate.contact_id.email %}">{{ candidate.contact_id.email }}</a></td>
 				                        <td><a href="{% url 'users:results' candidate.contact_id.email %}">{{ candidate.review_rating }}</a></td>
+				                        <td><a href="{% url 'users:results' candidate.contact_id.email %}">{{ candidate.verified_by }}</a></td>
 				                    </tr>
 				                {% endfor %}
 				            {% endif %} 
