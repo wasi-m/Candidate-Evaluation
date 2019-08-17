@@ -44,13 +44,13 @@
                             {% if data %}
                                 {% for candidate in data %}
                                     <tr>
-                                        <td><a href="{% url 'users:detail' candidate.email %}">{{ candidate.contact_id.name }}</a></td>
-                                        <td><a href="{% url 'users:evaluate' candidate.email %}">{{ candidate.contact_id.email }}</a></td>
+                                        <td><a href="{% url 'users:detail' candidate.contact_id.email %}">{{ candidate.contact_id.name }}</a></td>
+                                        <td><a href="{% url 'users:evaluate' candidate.contact_id.email %}">{{ candidate.contact_id.email }}</a></td>
                                         <td>{{ candidate.verified_by }}</td>
                                         <td>{{ candidate.review_rating }}</td>
                                         <td class="text-center">  
                                             <a class="btn btn-round btn-info btn-icon btn-icon btn-sm download"
-                                            href="{% url 'users:evaluate' candidate.email %}"
+                                            href="{% url 'users:results' candidate.contact_id.email %}"
                                             style="align-content: center">
                                             <i class="now-ui-icons arrows-1_cloud-download-93"></i></a> 
                                         </td>
