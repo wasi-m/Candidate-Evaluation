@@ -35,7 +35,7 @@
 			                <tr >
 			                    <th>Name</th>
 			                    <th>Email</th>
-			                    <th>Revew it</th>
+			                    <th>Evaluate it</th>
 			                </tr>
 			                </thead>
 			                <tbody>
@@ -43,7 +43,7 @@
 			                    {% for candidate in data %}
 				                    <tr>
 				                        <td><a href="{% url 'users:detail' candidate.email %}">{{ candidate.name }}</a></td>
-				                        <td><a href="{% url 'users:evaluate' candidate.email %}">{{ candidate.email }}</a></td>
+				                        <td><a href="{% url 'users:detail' candidate.email %}">{{ candidate.email }}</a></td>
 				                        <td class="text-center">  
 				                            <a class="btn btn-round btn-info btn-icon btn-icon btn-sm download"
 				                            href="{% url 'users:evaluate' candidate.email %}"
