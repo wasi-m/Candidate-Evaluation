@@ -1,0 +1,27 @@
+<!-- result.html -->
+{% extends 'base.html' %}
+
+{% block title %}Result{% endblock %}
+
+{% block content %}
+
+{% if data %}
+	<ul>
+	{% for candidate in data %}
+		<h2>Result of {{ candidate.contact_id.email }}</h2>
+
+		<p>Name of Candidate: {{ candidate.contact_id.name }}</p>
+		<p>Web address: {{ candidate.contact_id.web_address }}</p>
+		<p>Reviewed By: {{ candidate.verified_by }}</p>
+		<p>Reviewers Comment: {{ candidate.comment }}</p>
+		<p>Reviewers Rating: {{ candidate.review_rating }}</p>
+		<p>Reviewed On: {{ candidate.verified_on }}</p>
+	{% endfor %}
+	</ul>
+{% else %}
+    <p>No candidates are available.</p>
+{%endif%}
+
+<li><a href="{% url 'users:dashboard' %}"> GoTo Dashboard</a></li>
+
+{% endblock %}
