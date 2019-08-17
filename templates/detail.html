@@ -49,11 +49,11 @@
 		            		<embed src="{{ candidate.file_path }}" content_type="application/pdf" height="700px" width="500">
 		            	</div>
 		            </div>
-		            <li>
+		            <h4><ul>
 		            	<a href="{% url 'users:evaluate' candidate.email %}"> Evaluate {{ candidate.email }}</a> |
 						<a href="{% url 'users:results' candidate.email %}"> See Results {{ candidate.email }}</a> |
 						<a href="{% url 'users:dashboard' %}"> GoTo Dashboard</a>
-					</li>
+					</ul></h4>
 		        </div>
 		    </div>
 		</div>
