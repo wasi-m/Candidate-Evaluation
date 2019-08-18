@@ -19,7 +19,6 @@ Project Details
 - Backend - Python/Django
 - Database - SQLite3
 - Frontend - Bootstrap, HTML, CSS, JavaScript, Jquery
-- Template used from CreativeTim 
 - Hosted on - pythonanywhere.com
 - website - http://wasimtamboli.pythonanywhere.com/
 
@@ -49,5 +48,3 @@ $ python manage.py migrate
 $ python manage.py runserver
 ```
 6. Opne http://127.0.0.1:8000 in browser
-
-~ Volla ~
